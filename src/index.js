@@ -5,9 +5,9 @@ import './index.css'
 const BookList = () => {
     return (
         <div className="booklist">
-            <Book title="See you soon"/>
-            <Book title="The taste of Life."/>
-            <Book title="Happy world"/>
+            <Book title="See you soon" author="ABCD"/>
+            <Book title="The taste of Life." author="EFGH"/>
+            <Book title="Happy world" author="IJKL"/>
         </div>
     );
 }
@@ -17,7 +17,7 @@ const Book = (props) => {
         <div className="book">
             <Image />
             <Title title={props.title} />
-            <Author />
+            <Author author={props.author} />
         </div>
     );
 }
@@ -29,8 +29,8 @@ const Title = (props) => {
     return <h1>{props.title}</h1>
 };
 
-const Author = () => {
-    return <h4>APG Abdul Klam sir</h4>
+const Author = (props) => {
+    return <h4>{props.author}</h4>
 }
 
 
