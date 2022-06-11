@@ -62,6 +62,16 @@ const BookList = (props) => {
     );
 }
 
+// eventHandlers
+// 1-> onClick={() => console.log(title)}
+// 2-> by refrence/function  =>> 
+const Refhandler = () => {
+    alert("hi!")
+}
+// 3-> Refrence function with some paramenter
+const RefWithPara = (author) => {
+    console.log(author)
+}
 const Book = (props) => { // props will recive an object 'book' and inside that main containe aviable.
     const {img, title, author} = props.book;
     return (
@@ -69,7 +79,11 @@ const Book = (props) => { // props will recive an object 'book' and inside that 
             <Image img={img} />
             <Title title={title} />
             <Author author={author} />
+            <button type="button" onClick={() => console.log(title)} >Press Me!</button>
+            <button type="button" onClick={Refhandler} >Refrence/function Press Me!</button>
+            <button type="button" onClick={() => RefWithPara(author)} >With Parameter!</button>
         </div>
+        
     );
 }
 
