@@ -56,8 +56,7 @@ const BookList = (props) => {
             
             {/* new ways using ES6 properties*/}
             {BooksDetails.map(x => { // x is single object from Booksdetails
-                return <Book key={x.id} book={x} />
-                
+                return <Book key={x.id} book={x} /> // key is just for react to identify each object uniquely
             })}
         </div>
     );
