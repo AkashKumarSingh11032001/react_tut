@@ -10,16 +10,19 @@ import './index.css'
 // accessing data using list of objects []list of books details
 const BooksDetails = [
     {
+        id: 1,
         img: "https://www.thebalancecareers.com/the-parts-of-book-content-2799968",
         title: "Happy World",
         author: "Akash Singh"
     },
     {
+        id: 2,
         img: "https://collins.co.uk/pages/times-books",
         title: "Thinkk before you speak",
         author: "Ak Singh"
     },
     {
+        id: 3,
         img: "https://www.thespruce.com/how-to-sell-used-books-1388970",
         title: "Dont lie to me",
         author: "Akash"
@@ -53,7 +56,7 @@ const BookList = (props) => {
             
             {/* new ways using ES6 properties*/}
             {BooksDetails.map(x => { // x is single object from Booksdetails
-                return <Book book={x} />
+                return <Book key={x.id} book={x} />
                 
             })}
         </div>
