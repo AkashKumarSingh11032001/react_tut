@@ -2,12 +2,52 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import './index.css'
 
-const BookList = () => {
+// // accesing data from list of items.
+// const names = ['akash','kumar','singh']
+// const newName = names.map(x => {return <h1>{x}</h1>})
+// console.log(newName);
+
+// accessing data using list of objects
+const BooksDetails = [
+    {
+        img: "https://www.thebalancecareers.com/the-parts-of-book-content-2799968",
+        title: "Happy World",
+        author: "Akash Singh"
+    },
+    {
+        img: "https://collins.co.uk/pages/times-books",
+        title: "Thinkk before you speak",
+        author: "Ak Singh"
+    },
+    {
+        img: "https://www.thespruce.com/how-to-sell-used-books-1388970",
+        title: "Dont lie to me",
+        author: "Akash"
+    }
+];
+
+const firstBook = {
+    img: "https://www.thebalancecareers.com/the-parts-of-book-content-2799968",
+    title: "Happy World",
+    author: "Akash Singh"
+}
+const secondBook = {
+    img: "https://collins.co.uk/pages/times-books",
+    title: "Thinkk before you speak",
+    author: "Ak Singh"
+}
+const thirdBook = {
+    img: "https://www.thespruce.com/how-to-sell-used-books-1388970",
+    title: "Dont lie to me",
+    author: "Akash"
+}
+
+const BookList = (props) => {
     return (
         <div className="booklist">
-            <Book title="See you soon" author="ABCD"/>
-            <Book title="The taste of Life." author="EFGH"/>
-            <Book title="Happy world" author="IJKL"/>
+            <Book img={firstBook.img} title={firstBook.title} author={firstBook.author} />
+            <Book img={secondBook.img} title={secondBook.title} author={secondBook.author} />
+            <Book img={thirdBook.img} title={thirdBook.title} author={thirdBook.author} />
         </div>
     );
 }
@@ -15,15 +55,15 @@ const BookList = () => {
 const Book = (props) => {
     return (
         <div className="book">
-            <Image />
+            <Image img={props.img} />
             <Title title={props.title} />
             <Author author={props.author} />
         </div>
     );
 }
 
-const Image = () => {
-    return <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVzbKcUuxCtRDgrOphFFV9koAIh9iSyy13BtuvtVgxdNKjJhfF1X1v6V1IwpX8zmH-R0c&usqp=CAU" alt="APG" />
+const Image = (props) => {
+    return <img src={props.img} alt="APG" />
 };
 const Title = (props) => {
     return <h1>{props.title}</h1>
